@@ -1,0 +1,36 @@
+{
+  "name": "n8n-nodes-expertos-en-ia",
+  "version": "1.0.0",
+  "description": "Nodo oficial para la API de Expertos en IA",
+  "license": "MIT",
+  "author": {
+    "name": "Expertos en IA",
+    "email": "soporte@expertosenia.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/expertosenia/n8n-nodes-expertos-en-ia.git"
+  },
+  "main": "dist/nodes/ApiExpertosIA/ApiExpertosIA.node.js",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc -w"
+  },
+  "files": [
+    "dist"
+  ],
+  "n8n": {
+    "n8nNodesApiVersion": 1,
+    "credentials": [
+      "dist/nodes/ApiExpertosIA/ApiExpertosIA.credentials.js"
+    ],
+    "nodes": [
+      "dist/nodes/ApiExpertosIA/ApiExpertosIA.node.js"
+    ]
+  },
+  "devDependencies": {
+    "n8n-core": "*",
+    "n8n-workflow": "*",
+    "typescript": "~4.8.4"
+  }
+}
