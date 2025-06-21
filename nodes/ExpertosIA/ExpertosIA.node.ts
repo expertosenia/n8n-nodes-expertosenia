@@ -336,14 +336,6 @@ export class ExpertosIA implements INodeType {
 				default: '',
 				description: 'ID del mensaje al que responder (opcional)',
 			},
-			{
-				displayName: 'Sesión',
-				name: 'session',
-				type: 'string',
-				displayOptions: { show: { operation: ['sendLocation'] } },
-				default: 'default',
-				description: 'Nombre de la sesión a usar',
-			},
 
 			// --------------------------------------------------------------------------
 			// -- CAMPOS PARA ENVIAR CONTACTO (VCARD)

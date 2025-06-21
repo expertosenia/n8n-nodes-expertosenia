@@ -1,6 +1,6 @@
 {
   	"name": "n8n-nodes-expertosenia",
-  	"version": "1.0.0",
+  	"version": "1.0.1",
   "description": "n8n to connect with Expertos en IA API (WhatsApp HTTP API)",
   "keywords": [
     "n8n-community-node-package"

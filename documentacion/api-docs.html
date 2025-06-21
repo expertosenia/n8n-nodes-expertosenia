@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expertos en IA - Documentación API</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body data-theme="light">
+    <header class="header">
+        <div class="logo-section">
+            <div class="logo-placeholder">
+                <img src="logo.png" alt="Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="logo-fallback">LOGO</div>
+            </div>
+            <div>
+                <div class="title">Expertos en IA</div>
+                <div class="subtitle">Documentación API WhatsApp</div>
+            </div>
+        </div>
+        <button class="theme-toggle" onclick="toggleTheme()">
+            <span id="theme-icon">🌙</span>
+            <span id="theme-text">Modo Oscuro</span>
+        </button>
+    </header>
+
+    <div class="container">
+        <aside class="sidebar">
+            <div class="endpoint-group">
+                <h3>💬 Mensajería</h3>
+                <div class="endpoint-item" onclick="showEndpoint('sendText')">
+                    <span class="method-badge method-post">POST</span>
+                    <span>Enviar Texto</span>
+                </div>
+                <div class="endpoint-item" onclick="showEndpoint('sendImage')">
+                    <span class="method-badge method-post">POST</span>
+                    <span>Enviar Imagen</span>
+                </div>
+                <div class="endpoint-item" onclick="showEndpoint('sendFile')">
+                    <span class="method-badge method-post">POST</span>
+                    <span>Enviar Archivo</span>
+                </div>
+                <div class="endpoint-item" onclick="showEndpoint('sendVideo')">
+                    <span class="method-badge method-post">POST</span>
+                    <span>Enviar Video</span>
+                </div>
+                <div class="endpoint-item" onclick="showEndpoint('sendVoice')">
+                    <span class="method-badge method-post">POST</span>
+                    <span>Enviar Audio</span>
+                </div>
+                <div class="endpoint-item" onclick="showEndpoint('sendLocation')">
+                    <span class="method-badge method-post">POST</span>
+                    <span>Enviar Ubicación</span>
+                </div>
+                <div class="endpoint-item" onclick="showEndpoint('sendContactVcard')">
+                    <span class="method-badge method-post">POST</span>
+                    <span>Enviar Contacto</span>
+                </div>
+                <div class="endpoint-item" onclick="showEndpoint('sendPoll')">
+                    <span class="method-badge method-post">POST</span>
+                    <span>Enviar Encuesta</span>
+                </div>
+            </div>
+
+            <div class="endpoint-group">
+                <h3>📱 Chats</h3>
+                <div class="endpoint-item" onclick="showEndpoint('getMessages')">
+                    <span class="method-badge method-get">GET</span>
+                    <span>Obtener Mensajes</span>
+                </div>
+                <div class="endpoint-item" onclick="showEndpoint('startTyping')">
+                    <span class="method-badge method-post">POST</span>
+                    <span>Iniciar Escritura</span>
+                </div>
+            </div>
+
+            <div class="endpoint-group">
+                <h3>⚙️ Sesiones</h3>
+                <div class="endpoint-item" onclick="showEndpoint('getSessionInfo')">
+                    <span class="method-badge method-get">GET</span>
+                    <span>Info de Sesión</span>
+                </div>
+                <div class="endpoint-item" onclick="showEndpoint('logoutSession')">
+                    <span class="method-badge method-delete">DELETE</span>
+                    <span>Cerrar Sesión</span>
+                </div>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <!-- Introducción -->
+            <div id="intro-section" class="docs-section">
+                <h1>📚 Documentación API WhatsApp</h1>
+                <p class="lead">API REST para enviar y recibir mensajes de WhatsApp usando el protocolo WAHA (WhatsApp HTTP API).</p>
+                
+                <div class="info-card">
+                    <h3>🔗 Información General</h3>
+                    <ul>
+                        <li><strong>URL Base:</strong> <code>https://api.expertosenia.com</code></li>
+                        <li><strong>Autenticación:</strong> Header <code>ex-ia-api</code></li>
+                        <li><strong>Formato:</strong> JSON</li>
+                        <li><strong>Protocolo:</strong> HTTPS</li>
+                    </ul>
+                </div>
+
+                <div class="auth-section">
+                    <h3>🔐 Autenticación</h3>
+                    <p>Todas las peticiones requieren el header de autenticación:</p>
+                    <div class="code-block">
+Headers:
+Content-Type: application/json
+ex-ia-api: TU_API_KEY_AQUI</div>
+                </div>
+
+                <div class="session-section">
+                    <h3>📱 Sesiones</h3>
+                    <p>La API maneja sesiones de WhatsApp. Si no especificas una sesión, se usa <code>"default"</code>.</p>
+                    <div class="code-block">
+{
+  "session": "default",
+  // ... otros parámetros
+}</div>
+                </div>
+            </div>
+
+            <!-- Documentación del endpoint seleccionado -->
+            <div id="endpoint-docs" class="docs-section" style="display: none;">
+                <!-- El contenido se carga dinámicamente -->
+            </div>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html> 
